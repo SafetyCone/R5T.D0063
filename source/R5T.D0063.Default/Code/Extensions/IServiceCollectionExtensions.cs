@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 using R5T.Dacia;
 
+using R5T.D0063.Default;
+
 
 namespace R5T.D0063
 {
@@ -45,6 +47,18 @@ namespace R5T.D0063
         {
             var serviceAction = ServiceAction.New<IEnvironmentVariablesProvider>(() => services.AddEnvironmentVariablesProvider());
             return serviceAction;
+        }
+
+        public static EnvironmentVariableProvidersAggregation01 AddEnvironmentVariableProviders(this IServiceCollection services)
+        {
+            var environmentVariableProviderAction = services.AddEnvironmentVariableProviderAction();
+            var environmentVariablesProviderAction = services.AddEnvironmentVariablesProviderAction();
+
+            return new EnvironmentVariableProvidersAggregation01
+            {
+                EnvironmentVariableProviderAction = environmentVariableProviderAction,
+                EnvironmentVariablesProviderAction = environmentVariablesProviderAction
+            };
         }
     }
 }
