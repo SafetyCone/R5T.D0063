@@ -4,13 +4,16 @@ using System.Threading.Tasks;
 
 using R5T.Magyar;
 
+using R5T.T0064;
+
 
 namespace R5T.D0063
 {
     /// <summary>
     /// Gets environment variables from the current process (<see cref="EnvironmentVariableTarget.Process"/>).
     /// </summary>
-    public class EnvironmentVariablesProvider : IEnvironmentVariablesProvider
+    [ServiceImplementationMarker]
+    public class EnvironmentVariablesProvider : IEnvironmentVariablesProvider, IServiceImplementation
     {
         public Task<Dictionary<string, string>> GetEnvironmentVariables()
         {

@@ -3,10 +3,13 @@ using System.Threading.Tasks;
 
 using R5T.Magyar;
 
+using R5T.T0064;
+
 
 namespace R5T.D0063
 {
-    public class EnvironmentVariableProvider : IEnvironmentVariableProvider
+    [ServiceImplementationMarker]
+    public class EnvironmentVariableProvider : IEnvironmentVariableProvider, IServiceImplementation
     {
         public Task<WasFound<string>> GetEnvironmentVariable(string name)
         {
