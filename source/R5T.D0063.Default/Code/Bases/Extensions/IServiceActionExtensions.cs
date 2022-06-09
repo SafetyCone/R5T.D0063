@@ -23,7 +23,7 @@ namespace R5T.D0063.Default
         }
 
         /// <summary>
-        /// Adds the <see cref="EnvironmentVariableProvider"/> implementation of <see cref="IEnvironmentVariableProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="EnvironmentVariableProvider"/> implementation of <see cref="IEnvironmentVariableProvider"/> as a <see cref="Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceAction<IEnvironmentVariableProvider> AddEnvironmentVariableProviderAction(this IServiceAction _)
         {
@@ -32,7 +32,7 @@ namespace R5T.D0063.Default
         }
 
         /// <summary>
-        /// Adds the <see cref="EnvironmentVariablesProvider"/> implementation of <see cref="IEnvironmentVariablesProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="EnvironmentVariablesProvider"/> implementation of <see cref="IEnvironmentVariablesProvider"/> as a <see cref="Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceAction<IEnvironmentVariablesProvider> AddEnvironmentVariablesProviderAction(this IServiceAction _)
         {
